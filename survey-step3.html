@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey - Personal Interests</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Step 3: Personal Interests</h1>
+    <form action="survey-complete.html" method="GET">
+        <label for="hobbies">Hobbies & Interests:</label>
+        <input type="text" id="hobbies" name="hobbies" required>
+
+        <label for="fav-movie">Favorite Movie:</label>
+        <input type="text" id="fav-movie" name="fav-movie" required>
+
+        <label for="fav-music">Favorite Music Genre:</label>
+        <select id="fav-music" name="fav-music">
+            <option value="Pop">Pop</option>
+            <option value="Rock">Rock</option>
+            <option value="Classical">Classical</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="goal">Your Biggest Life Goal:</label>
+        <textarea id="goal" name="goal" rows="3" cols="40" required></textarea>
+
+        <input type="submit" value="Complete Survey">
+    </form>
+</div>
+
+</body>
+</html>

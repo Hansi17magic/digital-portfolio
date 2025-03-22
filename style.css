@@ -1,0 +1,73 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background: #142850;
+    padding: 20px;
+    font-size: 1.5em;
+}
+.intro img {
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #ffcc00;
+}
+
+/* Sections */
+section {
+    margin: 30px auto;
+    max-width: 800px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+h2 {
+    color: #ffcc00;
+}
+
+/* Gallery */
+.photo-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.photo-container img {
+    width: 200px;
+    border-radius: 10px;
+}
+
+/* Quote Section */
+.quote {
+    background: #ffcc00;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+blockquote {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background: #142850;
+    font-size: 1em;
+}

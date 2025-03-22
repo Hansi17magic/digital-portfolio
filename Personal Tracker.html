@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Expense Tracker</title>
+    <style>
+        /* Royal Blue Theme */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #0f4c75, #1b262c);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 40%;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
+            background: linear-gradient(to right, #00aaff, #0066cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        input, button {
+            width: 80%;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        }
+        input {
+            background: #e0f7fa;
+            color: black;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .expenses {
+            margin-top: 20px;
+            text-align: left;
+            padding: 10px;
+        }
+        .expense-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .delete-btn {
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+        .delete-btn:hover {
+            background: darkred;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Expense Tracker</h1>
+        <input type="text" id="expenseName" placeholder="Expense Name">
+        <input type="number" id="expenseAmount" placeholder="Amount">
+        <button onclick="addExpense()">Add Expense</button>
+        
+        <div class="expenses" id="expenseList"></div>
+    </div>
+
+    <script>
+        function addExpense() {
+            let name = document.getElementById("expenseName").value;
+            let amount = document.getElementById("expenseAmount").value;
+
+            if (name === "" || amount === "") {
+                alert("Please enter both name and amount!");
+                return;
+            }
+
+            let expenseList = document.getElementById("expenseList");
+
+            let div = document.createElement("div");
+            div.classList.add("expense-item");
+            div.innerHTML = `
+                <span>${name}: ₹${amount}</span>
+                <button class="delete-btn" onclick="deleteExpense(this)">X</button>
+            `;
+            
+            expenseList.appendChild(div);
+
+            document.getElementById("expenseName").value = "";
+            document.getElementById("expenseAmount").value = "";
+        }
+
+        function deleteExpense(button) {
+            button.parentElement.remove();
+        }
+    </script>
+
+</body>
+</html>
